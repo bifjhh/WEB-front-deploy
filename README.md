@@ -22,11 +22,11 @@
 ## 安装
 - 它带有一个安装程序（和卸载程序），因为它应该很容易。请注意，在安装NVM for Windows之前，您需要卸载任何现有版本的node.js。还要删除所有可能保留的现有nodejs安装目录
 
-- 在C盘根目录下新建文件夹 dev
+1. 在C盘根目录下新建文件夹 dev
     + 在dev文件夹内 新建 nodejs、nvm 两个子文件夹
     + 一般开发相关的文件都放C盘，但是放别的盘也是可以的
 
-- 将nvm安装包解压到nvm文件夹内（最好直接解压，不要复制粘贴）    
+2. 将nvm安装包解压到nvm文件夹内（最好直接解压，不要复制粘贴）    
 - 解压出来的文件有
     + elevate.cmd
     + elevate.vbs
@@ -34,10 +34,10 @@
     + LICENSE
     + nvm.exe
 
-- 选择 install.cmd 文件； 右键，选择以管理员身份运行 
+3. 选择 install.cmd 文件； 右键，选择以管理员身份运行 
     + 这时会弹出一个setting.txt文本文档，如果没有，则在C盘根目录下查找，并将其移动到nvm文件夹目录下
 
-- 打开setting.txt文件，开始配置
+4. 打开setting.txt文件，开始配置
     + root: C:\dev\nvm
     + path: C:\dev\nodejs
     + arch: 64 
@@ -45,9 +45,9 @@
 -  * 重要强调 - setting.txt配置文件内，每一行的结束，不要有空格，不要有空格，不要有空格！！！
 
 ### 系统方面的配置
-- 找到我的电脑（win10是此电脑）——>右键点击属性——>选择高级系统设置——>选择系统变量（环境变量）
+1. 找到我的电脑（win10是此电脑）——>右键点击属性——>选择高级系统设置——>选择系统变量（环境变量）
 
-- 添加变量
+2. 添加变量
     + 变量名：NVM_HOME   -----  变量值 C:\dev\nvm
     + 变量名：NVM_SYMLINK   -----  变量值 C:\dev\nodejs
 - 如果有，则可以选择修改或者删除
@@ -55,7 +55,7 @@
     + `%NVM_HOME%`;`%NVM_SYMLINK%` 
     + 添加变量属性，以 ; 分号隔开，中间不要有空格
 
-- 查看安装是否成功
+3. 查看安装是否成功
 - 打开CMD命令行工具
     + 输入`nvm version`  -- 查看有没有安装成功，若是出现版本信息，则安装成功。若报错，那就重新把步骤再捋一遍。
         + 检查环境变量是否配置成功：可以在控制台输入：set [环境变量名]，查看路径是否填写错误
@@ -79,13 +79,13 @@
 - 管理项目的依赖包
 - 可以用来下载我们需要使用的东西
 ##### npm 基本使用
-- 初始化操作
+1. 初始化操作
     + `npm init` 会生成一个package.json文件 
     + `npm init -y ` 快速生成默认的package.json文件
-- 下载所需要的包
+2. 下载所需要的包
     + `npm install +包的名称` 
 
-- 约定使用的版本号
+3. 约定使用的版本号
     + `npm install 包的名称 --save`
     + 下载之后会在package.json中添加当前下载的包的版本信息。
 - 、为什么要保存至package.json？
@@ -283,24 +283,24 @@
 ### 配置根路径
 > 默认的网站根路径是安装目录的www子目录（D:\wamp\www），如果不想使用默认目录，可以自己配置。配置方式如下：
 
-- 找到文件D:\wamp\bin\apache\Apache2.4.4\conf\httpd.conf 或者打开如下文件（实际是同一个文件）
+1. 找到文件D:\wamp\bin\apache\Apache2.4.4\conf\httpd.conf 或者打开如下文件（实际是同一个文件）
   <br/>
   ![apache配置](./img/httpd.conf.png)
   <br/>
-- 在文件中搜索DocumentRoot，找到239行位置
+2. 在文件中搜索DocumentRoot，找到239行位置
 - 修改根路径为如下形式：(如果要配置虚拟主机，这里配置成根路径；如果不配置根路径，可以配置成D:\文件夹名；现在配置的是虚拟主机形式；两个位置应该保持一致)
   <br/>
   ![根目录配置](./img/根目录.png)
   <br/>
 ### 配置虚拟主机
 > 配置虚拟主机可以配置多个网站（域名和网站目录对应），配置步骤如下
-- 开启虚拟主机辅配置，在httpd.conf 文件 中找到如下位置,然后把前面的 # 号去掉
+1. 开启虚拟主机辅配置，在httpd.conf 文件 中找到如下位置,然后把前面的 # 号去掉
   <br/>
   ![开启虚拟主机](./img/3.png)
   <br/>
 - 去掉`Include conf/extra/httpd-vhosts.conf`前面的 # 号，表示开启
 - 一般是在499-500行
-- 配置虚拟主机
+2. 配置虚拟主机
 - 打开`\wamp\bin\apache\Apache2.4.4\conf\extra\httpd-vhosts.conf`文件
   <br/>
   ![配置虚拟主机](./img/虚拟机.png)
@@ -310,39 +310,39 @@
     + DocumentRoot "E:/www/example"
     + ServerName "example.com "
     + ServerAlias "www.example.com"
-- 修改DNS（hosts）文件 路径：`C:\Windows\System32\drivers\etc\hosts`文件
+3. 修改DNS（hosts）文件 路径：`C:\Windows\System32\drivers\etc\hosts`文件
 - 添加如下内容：
     + 127.0.0.1  example.com  
     + 127.0.0.1  www.example.com
 - 注意，这里的域名需要和httpd-vhosts.conf文件 配置的域名一致  
-- 重启apache
+4. 重启apache
 - 访问http://www.example.com或者http://example.com 
 - 能够显示则表示配置成功
 
 ### 配置多个虚拟主机的实例如下：
-- httpd-vhosts.conf文件配置
+1. httpd-vhosts.conf文件配置
   <br/>
   ![httpd-vhosts.conf文件配置](./img/5.png)
   <br/>
-- hosts文件配置
+2. hosts文件配置
   <br/>
   ![hosts文件配置](./img/6.png)
   <br/>
-- 重启apache
+3. 重启apache
 - 重启服务器之后按照配置的域名进行访问，查看配置是否成功
 
 ## Navicat Premium  数据库工具配置
-- 选择对应的版本进行安装
-- 安装完成之后使用激活工具进行激活
-- 开启Apache服务器后登陆数据库
-- 查看，修改，添加，删除，数据库内表单
+1. 选择对应的版本进行安装
+2. 安装完成之后使用激活工具进行激活
+3. 开启Apache服务器后登陆数据库
+4. 查看，修改，添加，删除，数据库内表单
 
 # vue 脚手架
 ## 手动配置
-- 安装webpack，
+1. 安装webpack，
 - 打开命令行工具输入：`cnpm install webpack -g`，
 - 安装完成之后输入 `webpack -v`如果出现相应的版本号，则说明安装成功。
-- 打包
+2. 打包
 - 在webpack入口文件中配置
 - 在开发阶段下 在项目文件夹内创建 
     + src 文件夹   代码存放的位置
@@ -554,14 +554,14 @@ import addObj from './calc.js'; //返回的对象的，需要设置接受的名�
 - Vue.js 提供一个官方命令行工具，可用于快速搭建大型单页应用。该工具提供开箱即用的构建工具配置，带来现代化的前端开发流程。只需几分钟即可创建并启动一个带热重载、保存时静态检查以及可用于生产环境的构建配置的项目：
 ### 安装基本环境
 - 基于node的基础之上，必须先安装node
-- 首先安装webpack
+1. 首先安装webpack
 - 打开命令行工具输入：
     + `cnpm install webpack -g`，
 - 安装完成之后输入 
     + `webpack -v`
 - 如果出现相应的版本号，则说明安装成功。
 
-- 安装vue-cli脚手架构建工具
+2. 安装vue-cli脚手架构建工具
 - 打开命令行工具输入：
     + `cnpm install vue-cli -g`，
 - 安装完成之后输入 
@@ -569,14 +569,14 @@ import addObj from './calc.js'; //返回的对象的，需要设置接受的名�
 - 如果出现相应的版本号，则说明安装成功。
 
 ### 使用vue-cli 来构建项目
-- 建立项目文件位置
-- 安装vue脚手架官方模板
+1. 建立项目文件位置
+2. 安装vue脚手架官方模板
 - 在命令行输入 vue init webpack exprice 
     + 注意这里的“exprice” 是项目的名称可以说是随便的起名，但是需要主要的是“不能用中文”
-- 配置选项
+3. 配置选项
   <br/>
   ![vue-cli配置](./img/vue-cli配置.png)
-- 创建后的项目目录说明
+4. 创建后的项目目录说明
   <br/>
   ![vue-cli目录说明](./img/vue-cli目录说明.png)
   <br/>
