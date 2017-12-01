@@ -1,9 +1,9 @@
 # vue 脚手架
 ## 手动配置
-1. 安装webpack，
+- 安装webpack，
 - 打开命令行工具输入：`cnpm install webpack -g`，
 - 安装完成之后输入 `webpack -v`如果出现相应的版本号，则说明安装成功。
-2. 打包
+- 打包
 - 在webpack入口文件中配置
 - 在开发阶段下 在项目文件夹内创建 
     + src 文件夹   代码存放的位置
