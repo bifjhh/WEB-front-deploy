@@ -35,7 +35,9 @@
     + 变量名：NVM_SYMLINK   -----  变量值 C:\dev\nodejs
 - 如果有，则可以选择修改或者删除
 - 以上配置成功后，配置path变量属性
-    + %NVM_HOME%   %NVM_SYMLINK%
+    + `%NVM_HOME%`;`%NVM_SYMLINK%` 
+    + 添加变量属性，以 ; 分好隔开，中间不要有空格
+
 
 3. 查看安装是否成功
 - 打开CMD命令行工具
