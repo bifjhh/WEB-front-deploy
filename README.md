@@ -52,7 +52,8 @@
     + 变量名：NVM_SYMLINK   -----  变量值 C:\dev\nodejs
 - 如果有，则可以选择修改或者删除
 - 以上配置成功后，配置path变量属性
-    + %NVM_HOME%   %NVM_SYMLINK%
+    + `%NVM_HOME%`;`%NVM_SYMLINK%` 
+    + 添加变量属性，以 ; 分号隔开，中间不要有空格
 
 3. 查看安装是否成功
 - 打开CMD命令行工具
@@ -284,21 +285,25 @@
 1. 找到文件D:\wamp\bin\apache\Apache2.4.4\conf\httpd.conf 或者打开如下文件（实际是同一个文件）
   <br/>
   ![](./img/httpd.conf.png)
+  <br/>
 2. 在文件中搜索DocumentRoot，找到239行位置
 - 修改根路径为如下形式：(如果要配置虚拟主机，这里配置成根路径；如果不配置根路径，可以配置成D:\文件夹名；现在配置的是虚拟主机形式；两个位置应该保持一致)
   <br/>
   ![](./img/根目录.png)
+  <br/>
 ### 配置虚拟主机
 > 配置虚拟主机可以配置多个网站（域名和网站目录对应），配置步骤如下
 1. 开启虚拟主机辅配置，在httpd.conf 文件 中找到如下位置,然后把前面的 # 号去掉
   <br/>
   ![](./img/3.png)
+  <br/>
 - 去掉`Include conf/extra/httpd-vhosts.conf`前面的 # 号，表示开启
 - 一般是在499-500行
 2. 配置虚拟主机
 - 打开`\wamp\bin\apache\Apache2.4.4\conf\extra\httpd-vhosts.conf`文件
   <br/>
   ![](./img/虚拟机.png)
+  <br/>
 - 复制一份，进行修改
 - 分别修改以下三项，其它项无需指定。
     + DocumentRoot "E:/www/example"
@@ -317,9 +322,11 @@
 1. httpd-vhosts.conf文件配置
   <br/>
   ![](./img/5.png)
+  <br/>
 2. hosts文件配置
   <br/>
   ![](./img/6.png)
+  <br/>
 3. 重启apache
 - 重启服务器之后按照配置的域名进行访问，查看配置是否成功
 
