@@ -15,13 +15,13 @@
 - 管理项目的依赖包
 - 可以用来下载我们需要使用的东西
 ##### npm 基本使用
-1. 初始化操作
+- 初始化操作
     + `npm init` 会生成一个package.json文件 
     + `npm init -y ` 快速生成默认的package.json文件
-2. 下载所需要的包
+- 下载所需要的包
     + `npm install +包的名称` 
 
-3. 约定使用的版本号
+- 约定使用的版本号
     + `npm install 包的名称 --save`
     + 下载之后会在package.json中添加当前下载的包的版本信息。
 - 、为什么要保存至package.json？
