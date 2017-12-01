@@ -24,13 +24,13 @@
 - 在命令行输入 vue init webpack exprice 
     + 注意这里的“exprice” 是项目的名称可以说是随便的起名，但是需要主要的是“不能用中文”
 3. 配置选项
-<br/>
-![](./img/vue-cli配置.png)
+  <br/>
+  ![vue-cli配置](./img/vue-cli配置.png)
 4. 创建后的项目目录说明
-<br/>
-![](./img/vue-cli目录说明.png)
-<br/>
-![](./img/vue-cli目录说明2.png)
+  <br/>
+  ![vue-cli目录说明](./img/vue-cli目录说明.png)
+  <br/>
+  ![vue-cli目录说明2](./img/vue-cli目录说明2.png)
 
 ### 说明：
 - 在*.vue文件，template标签里写html代码，且template直接子级只能有一个标签。style标签里写样式，script里面写js代码
@@ -165,4 +165,8 @@ export default new Router({
 - 说明：
 - 如果需要增加组件那就在components文件下定义xx.vue文件并编写代码即可
 - 如果需要配置路由就要进行在index.js进行路由“路径”配置，还需要点击跳转就要用到<router-link></router-link>标签了。
+
+
+
+
 
