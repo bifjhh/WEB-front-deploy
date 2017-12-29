@@ -109,34 +109,33 @@
 - 也可以可以选择使Koala是一个前端预处理器语言图形编译工具，支持Less、Sass、Compass、CoffeeScript，帮助web开发者更高效地使用它们进行开发。跨平台运行，完美兼容windows、linux、mac。   
     + [koala下载](http://koala-app.com/)   
 
-#  Git安装
+# Git安装
 - Git是一款源代码管理工具(版本控制工具)
 - 直接下载安装
 
 ## 常用命令
-- 初始化Git仓库（仓储）
-- 这个仓库会存放，git对我们项目代码进行备份的文件
-- 在项目目录右键打开 git bash
-    + 输入 `git init` 
-
 - 设置当前使用Git的用户是谁,每一次备份都会将当前用户的用户名及邮箱信息存储起来，以便区分是谁进行的操作
-
-- 配置用户名：
+- 1. 配置用户名：
     + `git config --global user.name  "xxx"`
 
-- 配置邮箱：  
+- 2. 配置邮箱：  
     + `git config --global user.email "xxx@xx.com"`
 
-- 暂存文件（还没有保存到git库）
-    +  `git add ./文件路径`  将指定路径的文件暂存放到仓库门口
-    +  `git add .`  将所有修改过的文件暂存
-
-- 保存版本（文件）
-    + `git commit -m "对本次添加东西的说明"`  将已经暂存的保存到库中
-    + `git commit --all -m "对本次添加东西的说明"` 将所有修改过的文件直接放到房间内——不推荐
-
+- 初始化Git仓库（仓储）
+	+ 这个仓库会存放，git对我们项目代码进行备份的文件
+- 在项目目录右键打开 git bash
+    + 输入 `git init` 
 - 查看当前的状态
     + `git status`
+	
+- 暂存文件（还没有保存到git库）
+    +  `git add ./文件路径`  将指定路径的文件暂存放到仓库门口
+    + `git add .`  将所有修改过的文件暂存
+
+- 保存版本（文件）
+    + `git commit -m "添加说明"`  将已经暂存的保存到库中
+    + `git commit --all -m "对本次添加东西的说明"` 将所有修改过的文件直接放到房间内——不推荐
+
 
 - 查看日志
     + `git log` 查看历史提交的日志
@@ -166,14 +165,23 @@
 ### 提交代码到github(当作git服务器来用)
 - 上传到远程的master分支上
     +  `git push [地址] master `
-    +  示例: `git push https://github.com/huoqishi/test112.git master  master`
+    + 示例: `git push https://github.com/huoqishi/test112.git master  master`
+	+ 如果已经有过上传  使用 git push origin master
+	
 - 下载远程分支
     + 首先要先初始化一个本地git库    
     + `git pull [地址] master`
 - 拷贝远程仓库
     + 不需要初始化本地gitku
     + `git clone [地址]`
-    + 会得到远程仓储相同的数据,如果多次执行会覆盖本地内容。   
+    + 会得到远程仓储相同的数据,如果多次执行会覆盖本地内容。 
+### 多人协作
+- 当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。
+- 查看远程库的信息
+	+ git remote
+- 显示更详细的信息
+	+ git remote -v
+	
 ## Git中的忽略文件
 - .gitignore,在这个文件中可以设置要被忽略的文件或者目录。
 - 被忽略的文件不会被提交仓储里去.
